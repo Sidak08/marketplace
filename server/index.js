@@ -1,17 +1,13 @@
 class User {
-    constructor(name, age, email) {
+    constructor(name, age, email, id, password,) {
         this.name = name;
         this.age = age;
         this.email = email;
     }
-
-    getInfo() {
-        return `Name: ${this.name}, Age: ${this.age}, Email: ${this.email}`;
-    }
 }
 
 class Item {
-    constructor(image, title, price, tags, description, user) {
+    constructor(image, title, price, tags, description, location, user) {
         this.title = title;
         this.price = price;
         this.image = image ? [image] : [];
@@ -19,6 +15,7 @@ class Item {
         this.description = description
         this.user = user
         this.date = new Date
+        this.location = location
     }
     addImage(image) {
         if (Array.isArray(image)) {
@@ -62,14 +59,15 @@ class Item {
         this.description = description
     }
 
+    changeLocation(location) {
+        this.location = location
+    }
+
     delete() {
         delete this
     }
 }
 
 const bike = new Item()
-// bike.addTag(["ax", "ca", "aswd"])
-// console.log(bike)
-// bike.removeTag("ax")
-console.log(bike.date)
+
 
